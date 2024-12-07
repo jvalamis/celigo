@@ -102,12 +102,14 @@ function renderProposal() {
         <section class="contact">
             <h2>Let's Connect</h2>
             <p>Ready to discuss your integration needs in detail. Available for immediate start.</p>
-            <button onclick="window.location.href='mailto:your.jvalamis@gmail.com'" class="contact-button">
-                Contact Me
-            </button>
-            <button onclick="generatePDF()" class="pdf-button">
-                Download PDF
-            </button>
+            <div class="button-container">
+                <button onclick="window.location.href='mailto:your.jvalamis@gmail.com'" class="contact-button">
+                    Contact Me
+                </button>
+                <button onclick="generatePDF()" class="pdf-button">
+                    Download PDF
+                </button>
+            </div>
         </section>
     `;
 
@@ -235,6 +237,34 @@ function renderProposal() {
             cursor: pointer;
             transition: background 0.3s;
             margin-left: 10px;
+        }
+
+        .pdf-button:hover {
+            background: #c0392b;
+        }
+
+        .button-container {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .contact-button,
+        .pdf-button {
+            flex: 0 1 auto;
+            min-width: 150px;
+        }
+
+        .pdf-button {
+            background: #e74c3c;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 4px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background 0.3s;
         }
 
         .pdf-button:hover {
