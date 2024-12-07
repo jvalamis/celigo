@@ -19,7 +19,7 @@ function renderProposal() {
                 <li>✓ Extensive experience with Celigo iPaaS platform</li>
                 <li>✓ Strong background in API integration and data mapping</li>
                 <li>✓ Proven track record with customer and transaction record mapping</li>
-                <li>✓ Postman expertise for API testing and implementation</li>
+                <li>✓ Postman expertise for API testing and implementationd</li>
             </ul>
         </section>
 

@@ -1,11 +1,15 @@
 {
-  "name": "ls",
+  "name": "celigo-proposal",
   "version": "1.0.0",
+  "description": "Celigo Integration Specialist Proposal",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "echo 'No build step needed - static site'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jvalamis/celigo.git"
   },
   "author": "",
-  "license": "ISC",
-  "description": ""
+  "license": "ISC"
 }

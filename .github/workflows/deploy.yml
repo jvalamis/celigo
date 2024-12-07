@@ -3,7 +3,8 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main # or master, depending on your default branch name
+      - main
+      - master # Adding master branch to trigger
   workflow_dispatch:
 
 permissions:
@@ -21,6 +22,13 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+
+      - name: Debug - List files
+        run: |
+          ls -la
+          pwd
+          echo "Current branch:"
+          git branch --show-current
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
