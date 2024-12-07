@@ -105,6 +105,9 @@ function renderProposal() {
             <button onclick="window.location.href='mailto:your.jvalamis@gmail.com'" class="contact-button">
                 Contact Me
             </button>
+            <button onclick="generatePDF()" class="pdf-button">
+                Download PDF
+            </button>
         </section>
     `;
 
@@ -221,7 +224,38 @@ function renderProposal() {
             padding: 8px 0;
             border-bottom: 1px solid #eee;
         }
+
+        .pdf-button {
+            background: #e74c3c;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 4px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background 0.3s;
+            margin-left: 10px;
+        }
+
+        .pdf-button:hover {
+            background: #c0392b;
+        }
     `;
 
   document.head.appendChild(style);
+}
+
+// Add the PDF generation function
+function generatePDF() {
+  const element = document.querySelector(".proposal-container");
+  const opt = {
+    margin: 1,
+    filename: "celigo-integration-proposal.pdf",
+    image: { type: "jpeg", quality: 0.98 },
+    html2canvas: { scale: 2 },
+    jsPDF: { unit: "in", format: "letter", orientation: "portrait" },
+  };
+
+  // Generate PDF
+  html2pdf().set(opt).from(element).save();
 }
