@@ -16,11 +16,60 @@ function renderProposal() {
         <section class="expertise">
             <h2>Relevant Expertise</h2>
             <ul>
-                <li>✓ Extensive experience with Celigo iPaaS platform</li>
                 <li>✓ Strong background in API integration and data mapping</li>
                 <li>✓ Proven track record with customer and transaction record mapping</li>
-                <li>✓ Postman expertise for API testing and implementationd</li>
+                <li>✓ Postman expertise for API testing and implementation</li>
             </ul>
+        </section>
+
+        <section class="technical-example">
+            <h2>Technical Understanding</h2>
+            <div class="code-example">
+                <h3>Sample Integration Approach</h3>
+                <pre>
+// Example Customer Record Mapping
+{
+    "sourceData": {
+        "customerInfo": {
+            "id": "CUST123",
+            "name": "John Doe",
+            "transactions": [
+                {
+                    "transId": "TR001",
+                    "amount": 150.00,
+                    "date": "2024-03-15"
+                }
+            ]
+        }
+    },
+    "targetMapping": {
+        "customerId": "{{customerInfo.id}}",
+        "customerName": "{{customerInfo.name}}",
+        "transactionRecords": "{{customerInfo.transactions}}",
+        "transformations": [
+            {
+                "field": "transactionRecords",
+                "type": "array_map",
+                "mapping": {
+                    "transaction_id": "{{transId}}",
+                    "transaction_amount": "{{amount}}",
+                    "transaction_date": "{{date}}"
+                }
+            }
+        ]
+    }
+}
+                </pre>
+            </div>
+            <div class="implementation-notes">
+                <h3>Key Integration Points</h3>
+                <ul>
+                    <li>✓ Custom field mapping between source and target systems</li>
+                    <li>✓ Transaction record relationship maintenance</li>
+                    <li>✓ Data transformation and validation rules</li>
+                    <li>✓ Error handling and retry mechanisms</li>
+                </ul>
+            </div>
         </section>
 
         <section class="approach">
@@ -135,6 +184,42 @@ function renderProposal() {
 
         .contact-button:hover {
             background: #2980b9;
+        }
+
+        .technical-example {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 6px;
+            margin: 20px 0;
+        }
+
+        .code-example {
+            margin: 15px 0;
+        }
+
+        .code-example pre {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 15px;
+            border-radius: 4px;
+            overflow-x: auto;
+            font-family: 'Consolas', monospace;
+            font-size: 0.9em;
+            line-height: 1.4;
+        }
+
+        .implementation-notes {
+            margin-top: 20px;
+        }
+
+        .implementation-notes ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .implementation-notes li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
         }
     `;
 
